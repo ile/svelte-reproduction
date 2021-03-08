@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width,initial-scale=1'>
+
+	<title>Framework X App</title>
+
+	<link rel='icon' type='image/png' href='/favicon.png'>
+	<link rel='stylesheet' href='/global.css'>
+	<link rel='stylesheet' href='/build/bundle.css'>
+	<script type="text/javascript">
+
+		document.addEventListener('url-changed', (e) => {
+			console.log('Url changed, re-creating page');
+			addBody()
+		});
+
+		function addBody() {
+			document.body.innerHTML = '<h1>This is a Framework X App</h1>';
+			var s = document.createElement( 'script' );
+			s.setAttribute( 'src', '/build/bundle.js' );
+			document.body.appendChild( s );
+		}
+
+	</script>
+
+	<style type="text/css">
+		body {
+			text-align: center;
+			padding: 5em;
+		}
+	</style>
+	
+</head>
+
+<body onload="addBody()">
+</body>
+</html>
